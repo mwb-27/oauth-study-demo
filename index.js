@@ -49,6 +49,9 @@ const oauth = async ctx => {
 };
 
 app.use(main);
+app.use(route.get('/moweibinOAuth2', (ctx) => {
+  ctx.response.body(`/moweibinOAuth2.html`);
+}));
 app.use(route.get('/oauth/redirect', oauth));
 
 app.listen(8080);
